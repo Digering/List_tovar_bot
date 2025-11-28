@@ -206,4 +206,9 @@ def delete(message):
     id_message -= 1
     bot.send_message(message.chat.id, "Ссылка на товар удалена")
 
+@bot.message_handler(content_types=['text'])
+def text(message):
+    bot.send_message(message.chat.id, "Простите, но я не умею поддерживать диалог\n"
+                                      "Если вы пишете какую-либо команду то такой команды нет")
+
 bot.polling(none_stop=True)
